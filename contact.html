@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contact.css">
     <script src="https://kit.fontawesome.com/afcf5fe923.js" crossorigin="anonymous"></script>
     <title>Fady Tamer</title>
 
@@ -53,44 +53,22 @@
 
     <div class="content">
 
-        <div class="about_container">
-            <div class="about">
-                <div class="about_title">
-                    <h3>About me</h3>
-                </div>
-                <div class="data">
-                    <p>Hello, I'm Fady tamer</p>
-                    <p>living in Cairo,Egypt</p>
-                    <p>I'm a computer Science Student in Modern Academy</p>
-                </div>
-                <button><a href="contact.html">get in touch</a></button>
-                <button><a href="data/Fady_Tamer_Resume.docx" download>Download Resume</a></button>
-            </div>
+        <div class="contact_form">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or would like to get in touch, feel free to reach out!</p>
 
-            <div class="about_pic">
-                <img src="img/mypic.jpg" alt="about img">
-            </div>
-        </div>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Name:</label>
+                <input required placeholder="Your Name">
 
-        <div class="skills">
-            <div class="skills_title">
-                <h3>Skills</h3>
-            </div>
-            <div class="skills_container">
-                <i>cpp</i>
-                <i class="fa-brands fa-java">
-                    <p>Java</p>
-                </i>
-                <i class="fa-brands fa-html5">
-                    <p>HTML</p>
-                </i>
-                <i class="fa-brands fa-css3-alt">
-                    <p>CSS</p>
-                </i>
-                <i class="fa-solid fa-database">
-                    <p>SQL</p>
-                </i>
-            </div>
+                <label for="email">Email:</label>
+                <input required placeholder="Example@gmail.com">
+
+                <label for="message">Message:</label>
+                <textarea required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
         </div>
 
     </div>
