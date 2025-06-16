@@ -10,7 +10,9 @@
     align-items: center;
 }
 
-.about {
+.about { 
+    background-color: var(--BGC);
+    border-radius: 20px;
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
@@ -18,7 +20,7 @@
 
 .about_title h3 {
     font-size: 25px;
-    color: #fff;
+    color: var(--TC);
     margin: 0;
     padding: 0;
 }
@@ -32,7 +34,7 @@
     margin: 5px;
     font-size: 35px;
     font-weight: bold;
-    color: #ff9900;
+    color: var(--FGC);
 }
 
 .about_pic img {
@@ -40,23 +42,22 @@
     border-radius: 75%;
     margin: 20px 250px 20px 20px;
     padding: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
-    border: 5px solid rgba(255, 153, 0, 0.5);
+    border: 5px solid var(--FGC);
 }
 
 .about_container button {
     margin: 10px;
     padding: 10px 20px;
     border-radius: 7px;
-    background-color: #ff9900;
-    color: #fff;
+    background-color: var(--FGC);
+    color: var(--TC);
     font-size: 18px;
     font-weight: bold;
 }
 
 .about_container button a {
     text-decoration: none;
-    color: #fff;
+    color: var(--TC);
 }
 
 .skills{
@@ -67,7 +68,7 @@
 
 .skills h3 {
     font-size: 25px;
-    color: #fff;
+    color: var(--TC);
     margin: 0;
     padding: 0;
 }
@@ -84,10 +85,10 @@
     display: flex;
     padding: 20px;
     margin: 20px;
-    color: #fff;
+    color: var(--TC);
     font-size: 30px;
     border-radius: 20px;
-    background-color: rgba(82, 81, 81, 0.324);
+    background-color: var(--BGC);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 150px;
@@ -99,6 +100,6 @@
 .skills_container i p{
     font-size: 15px;
     font-weight: bold;
-    color: #ff9900;
+    color: var(--FGC);
     padding: 0 20px 0 20px;
 }
