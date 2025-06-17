@@ -8,10 +8,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
 }
 
-.about { 
+.about {
     background-color: var(--BGC);
+    border: 2px solid var(--FGC);
     border-radius: 20px;
     margin: 20px;
     padding: 20px;
@@ -35,6 +37,7 @@
     font-size: 35px;
     font-weight: bold;
     color: var(--FGC);
+    text-shadow: -1px 2px 8px var(--SHTC);
 }
 
 .about_pic img {
@@ -60,7 +63,9 @@
     color: var(--TC);
 }
 
-.skills{
+.skills {
+    background-color: var(--BGC);
+    border: 2px solid var(--FGC);
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
@@ -73,33 +78,108 @@
     padding: 0;
 }
 
-.skills_container{
+.skills_container {
     flex-wrap: wrap;
-    padding: 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
-.skills_container i{
-    display: flex;
-    padding: 20px;
-    margin: 20px;
-    color: var(--TC);
-    font-size: 30px;
-    border-radius: 20px;
-    background-color: var(--BGC);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.skill {
+    border: 2px solid var(--FGC);
     width: 150px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
+    height: 20px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
-.skills_container i p{
-    font-size: 15px;
-    font-weight: bold;
+.skill:hover {
+    padding: 20px 20px 100px 20px;
+    transition: all 0.8s ease-in-out;
+}
+
+.skill_icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill_icon img {
+    margin-right: 20px;
+}
+
+.skill_icon i {
+    font-size: 20px;
     color: var(--FGC);
-    padding: 0 20px 0 20px;
+    margin-right: 20px;
+}
+
+.skill_icon p {
+    font-size: 20px;
+    color: var(--TC);
+    margin: 0;
+    padding: 0;
+}
+
+.skill ul {
+    padding: 10px;
+    margin: 0;
+    color: var(--TC);
+}
+
+.skill ul a {
+    text-decoration: none;
+    color: var(--FGC);
+    font-size: 16px;
+}
+
+@media (max-width: 426px) {
+    .about_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .data p {
+        font-size: 15px;
+    }
+
+    .about_pic img {
+        display: none;
+    }
+
+    .skills_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 896px) and (min-width: 427px) {
+    .about_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_pic img {
+        width: 200px;
+        margin: 20px 0;
+    }
+
+    .skills_container {
+        flex-direction: row;
+    }
+
+    .skill {
+        margin: 10px;
+    }
 }

@@ -1,5 +1,6 @@
 .content {
     background-color: var(--BGC);
+    border: 2px solid var(--FGC);
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
