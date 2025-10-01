@@ -1,152 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/afcf5fe923.js" crossorigin="anonymous"></script>
-    <title>Fady Tamer - Home page</title>
-
-    <meta name="description"
-        content="Portfolio of Fady Tamer, a Computer Science student showcasing web development, Java, and database projects. Explore my skills, projects, and resume.">
-
-    <meta name="keywords"
-        content="Fady Tamer, computer science student, web developer, Java developer, database projects, portfolio website, NetBeans projects, SQL Server, HTML CSS JavaScript, final year project, e-book store project, bank database system, Java Swing, MySQL, GitHub, Netlify">
-
-    <meta name="author" content="Fady Tamer">
-
-    <!-- Open Graph for Social Media Sharing -->
-    <meta property="og:title" content="Fady Tamer Portfolio">
-    <meta property="og:description"
-        content="Explore the web and Java-based projects of Fady Tamer, a passionate Computer Science student.">
-    <meta property="og:image" content="https://fady-tamer.netlify.app/images/your-thumbnail.jpg">
-    <meta property="og:url" content="https://fady-tamer.netlify.app">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/logo w b.png" type="image/x-icon">
+    <title>Test</title>
 </head>
 
 <body>
-
-    <div class="grid-bg"></div>
-
     <div class="header">
+        <h1>Fady Tamer</h1>
+    </div>
 
-        <div class="logo">
-            <img src="img/logo v2.png" alt="logo">
+    <div class="content_about_me">
+        <h1 class="about_me_h1">About Me</h1>
+        <div class="about_me">
+            <p class="about_me_p">Hello, I'm Fady Tamer.<br>
+                Living in Cairo, Egypt. <br>
+                I'm a Computer Science student at Modern Academy.
+            </p>
+            <button class="about_me_download_cv">
+                <a class="about_me_download_cv_a" href="data/Fady_Tamer_Resume.docx" download>Download CV</a>
+            </button>
         </div>
-
-        <div class="header_title">
-            <h1>Fady Tamer</h1>
+        <div class="my_img">
+            <img src="img/mypic.jpg" alt="My Image">
         </div>
+    </div>
 
-        <div class="navigate">
-            <a href="index.html">Home</a>
-            <a href="projects.html">projects</a>
-            <a href="contact.html">Contact</a>
+    <div class="content_Skills">
+        <h1 class="skills_h1">Skills</h1>
+        <div class="skills_icons">
+            <i><img src="https://img.icons8.com/ios-filled/50/c-plus-plus-logo.png" alt="c-plus-plus-logo" /></i>
+            <i class="fa-brands fa-java skills_icon">
+                <p>java</p>
+            </i>
+            <i class="fa-brands fa-html5 skills_icon">
+                <p>HTML</p>
+            </i>
+            <i class="fa-brands fa-css3-alt skills_icon">
+                <p>CSS</p>
+            </i>
+            <i class="fa-solid fa-database skills_icon">
+                <p>Database</p>
+            </i>
         </div>
 
     </div>
 
-    <div class="content">
-
-        <div class="about_container">
-            <div class="about">
-                <div class="about_title">
-                    <h3>About me</h3>
-                </div>
-                <div class="data">
-                    <p>Hello, I'm Fady tamer</p>
-                    <p>living in Cairo,Egypt</p>
-                    <p>I'm a computer Science Student in Modern Academy</p>
-                </div>
-                <button><a href="contact.html">get in touch</a></button>
-                <button><a href="data/Fady_Tamer_Resume.docx" download>Download Resume</a></button>
-            </div>
-
-            <div class="about_pic">
-                <img src="img/mypic.jpg" alt="about img">
-            </div>
+    <div class="content_projects">
+        <h1 class="projects_h1">Projects</h1>
+        <div class="project">
+            <h3 class="project_h3">E-book</h3>
+            <p class="project_p">This project is a Java-based desktop application designed to manage an E-Book Store. It
+                provides a graphical user interface (GUI) for managing books, publishers, and authors in a database. The
+                application uses AWT (Abstract Window Toolkit) for the GUI and JDBC (Java Database Connectivity) for
+                database operations.</p>
+            <h4>skills => Java · Microsoft SQL Server</h4>
+            <a class="project_link" href="#"><i class="fa-brands fa-github"></i> Project link </a>
         </div>
-
-        <div class="skills">
-            <div class="skills_title">
-                <h3>Skills</h3>
-            </div>
-            <div class="skills_container">
-
-                <div class="skill">
-                    <div class="skill_icon">
-                        <i class="fa-brands fa-java"></i>
-                        <p>Java</p>
-                    </div>
-                    <ul>
-                        <li><a href="projects.html#1">E-Book</a></li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <div class="skill_icon">
-                        <i class="fa-brands fa-html5"></i>
-                        <p>HTML</p>
-                    </div>
-                    <ul>
-                        <li><a href="projects.html#2">my portfolio</a></li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <div class="skill_icon">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <p>CSS</p>
-                    </div>
-                    <ul>
-                        <li><a href="projects.html#2">my portfolio</a></li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <div class="skill_icon">
-                        <i class="fa-solid fa-database"></i>
-                        <p>SQL server</p>
-                    </div>
-                    <ul>
-                        <li><a href="projects.html#1">E-Book</a></li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <div class="skill_icon">
-                        <img src="img/c++.png" alt="">
-                        <p>C++</p>
-                    </div>
-                </div>
-            </div>
+        <div class="project">
+            <h3 class="project_h3">My portfolio</h3>
+            <p class="project_p">This project is a personal portfolio website designed to showcase the skills, projects,
+                and achievements of me, a Computer Science student. The website is structured to provide an overview of
+                the developer's background, technical expertise, and completed projects.</p>
+            <h4>Skills => Html · Css</h4>
+            <a class="project_link" href="#"><i class="fa-brands fa-github"></i> Project link </a>
         </div>
-
     </div>
 
-    <footer class="footer">
-        <div class="footer_content">
-            <p>&copy; 2025 Fady Tamer. All rights reserved.</p>
-            <div class="footer_links">
-                <a href="mailto:contact.fady.tamer@gmail.com" target="_blank">
-                    <i class="fa-solid fa-inbox"></i> Mail
-                </a>
-                <a href="https://github.com/Fady-tamer" target="_blank">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/fady-tamer" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://www.facebook.com/fadytamer444/" target="_blank">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                </a>
-                <a href="https://www.instagram.com/_fady_tamer_/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
-            </div>
-        </div>
-    </footer>
+    <div class="footer">
+        <p>© 2025 Fady Tamer. All rights reserved.</p>
+        <a class="footer_link" href="https://www.linkedin.com/in/fady-tamer/" target="_blank"><i
+                class="fa-brands fa-linkedin"></i></a>
+        <a class="footer_link" href="https://www.facebook.com/fadytamer444/" target="_blank"><i
+                class="fa-brands fa-facebook"></i></a>
+        <a class="footer_link" href="https://www.instagram.com/_fady_tamer_/" target="_blank"><i
+                class="fa-brands fa-instagram"></i></a>
+        <a class="footer_link" href="https://github.com/Fady-tamer" target="_blank"><i
+                class="fa-brands fa-github"></i></a>
+        <a class="footer_link" href="mailto:fadytamer2018@gmail.com" target="_blank"><i
+                class="fa-solid fa-inbox"></i></a>
+    </div>
 
 </body>
 
