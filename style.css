@@ -63,9 +63,21 @@ body {
     color: var(--HMC);
 }
 
+.welcome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .content_welcome {
     margin: 50px;
     padding: 0;
+}
+
+.content_img{
+    display: flex;
+    justify-content: center;
 }
 
 .welcome_h1 {
@@ -128,6 +140,12 @@ body {
 .welcome_view_projects_a {
     color: var(--TC);
     text-decoration: none;
+}
+
+.mypic {
+    width: 300px;
+    border-radius: 50%;
+    border: 7px solid var(--HMC);
 }
 
 .line {
@@ -264,10 +282,23 @@ body {
     border-radius: 12px;
 }
 
+.project_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .projects_h1 {
     text-align: center;
     color: var(--TC);
     font-size: 30px;
+}
+
+.project_p {
+    background-color: var(--LBGC);
+    border-radius: 10px;
+    margin: 0;
+    padding: 10px;
 }
 
 .project_cards {
@@ -422,6 +453,11 @@ body {
         text-align: center;
     }
 
+    .welcome {flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .welcome_h1 {
         font-size: 36px;
         width: 100%;
@@ -438,6 +474,10 @@ body {
         padding: 12px 0;
         font-size: 18px;
         display: block;
+    }
+
+    .mypic{
+        width: 250px;
     }
 
     .about_me,
