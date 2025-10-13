@@ -1,9 +1,9 @@
 :root {
     --BGC: #0d1117;
     --LBGC: #1f2937;
-    --MC: #f88181;
-    --DMC: #1d7f1f;
-    --HMC: #dfed14;
+    --MC: #3d3d3d;
+    --DMC: #000000;
+    --HMC: #b50000;
     --TC: #c3cbd4;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .header_name_h1 {
-    color: var(--DMC);
+    color: var(--TC);
     font-size: 32px;
     margin: 0;
     padding: 0;
@@ -75,17 +75,13 @@ body {
     padding: 0;
 }
 
-.content_img{
+.content_img {
     display: flex;
     justify-content: center;
 }
 
 .welcome_h1 {
-    background: linear-gradient(90deg, var(--HMC) 0%, var(--DMC) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: var(--HMC);
     width: 700px;
     font-size: 70px;
     margin: 0;
@@ -121,7 +117,7 @@ body {
     margin: 30px 30px 0 0;
     padding: 15px 30px;
     font-size: 20px;
-    background-color: var(--DMC);
+    background-color: var(--HMC);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -132,7 +128,7 @@ body {
     padding: 15px 30px;
     font-size: 20px;
     background-color: var(--BGC);
-    border: var(--DMC) solid 2px;
+    border: var(--HMC) solid 2px;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -150,7 +146,7 @@ body {
 
 .line {
     border: none;
-    border-top: 1px solid var(--DMC);
+    border-top: 1px solid var(--HMC);
     margin: 50px;
 }
 
@@ -198,7 +194,7 @@ body {
     margin-bottom: 30px;
     padding: 15px 30px;
     font-size: 20px;
-    background-color: var(--DMC);
+    background-color: var(--HMC);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -255,7 +251,7 @@ body {
 .skill_item {
     display: flex;
     align-items: center;
-    background-color: var(--DMC);
+    background-color: var(--HMC);
     color: var(--TC);
     padding: 8px 15px;
     border-radius: 8px;
@@ -295,6 +291,7 @@ body {
 }
 
 .project_p {
+    text-align: center;
     background-color: var(--LBGC);
     border-radius: 10px;
     margin: 0;
@@ -335,19 +332,37 @@ body {
 }
 
 .project_card_a {
-    color: var(--DMC);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: var(--HMC);
+    color: var(--TC);
     text-decoration: none;
     transition: color 0.3s ease;
 }
+.project_card_a i{
+    font-size: 24px;
+}
+.project_card_a span{
+    margin-left: 10px;
+}
 
 .project_card_a:hover {
-    color: var(--HMC);
+    color: var(--TC);
+}
+
+.project_skill {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0;
 }
 
 .skill {
+    width: calc(50% - 40px);
     display: flex;
-    align-items: center;
-    margin: 20px;
+    margin: 0 20px;
 }
 
 .skill-name {
@@ -365,7 +380,7 @@ body {
 }
 
 .skill-percent {
-    background-color: var(--DMC);
+    background-color: var(--HMC);
     height: 100%;
 }
 
@@ -406,7 +421,7 @@ body {
 }
 
 .link {
-    color: var(--DMC);
+    color: var(--HMC);
     font-size: 24px;
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -427,6 +442,7 @@ body {
     color: var(--TC);
     font-size: 14px;
 }
+
 
 /* Responsive styles for mobile devices */
 @media (max-width: 768px) {
@@ -453,7 +469,8 @@ body {
         text-align: center;
     }
 
-    .welcome {flex-direction: column;
+    .welcome {
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
@@ -476,7 +493,7 @@ body {
         display: block;
     }
 
-    .mypic{
+    .mypic {
         width: 250px;
     }
 
@@ -512,6 +529,22 @@ body {
         padding: 15px;
     }
 
+    .project_skill {
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+    .skill {
+        width: calc(100% - 40px);
+    }
+
+    .project_card_a {
+        display: flex;
+        justify-content: center;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
     .contact_links {
         flex-wrap: wrap;
         gap: 20px;
@@ -540,6 +573,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--DMC);
+    background: var(--HMC);
     border-radius: 10px;
 }
