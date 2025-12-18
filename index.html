@@ -9,245 +9,148 @@
     <title>Fady Tamer</title>
     <link rel="icon" href="img/logo w b.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 
 <body>
-    <!-- <header class="header">
-        <a class="header_name" href="index.html">
+    <header class="header">
+        <a class="header_name" href="#welcome">
             <h1 class="header_name_h1">Fady Tamer</h1>
         </a>
         <nav class="header_links">
-            <a class="header_links_a" href="#about_line">About</a>
-            <a class="header_links_a" href="#projects_line">Projects</a>
-            <a class="header_links_a" href="#contact">Contact</a>
+            <a class="header_links_a" id="aboutLink">About</a>
+            <a class="header_links_a" id="projectsLink">Projects</a>
+            <a class="header_links_a" id="skillsLink">Skills</a>
+            <a class="header_links_a" id="contactLink">Contact</a>
         </nav>
-    </header> -->
-
-    <main>
-        <section class="welcome">
-            <div class="content_welcome">
-                <h1 class="welcome_h1">Hello, I'm Fady Tamer.</h1>
-                <p class="welcome_p">CS Student at modern Academy in maadi 💻| competitive programmer 🧑🏻‍💻</p>
-                <button class="welcome_button1">
-                    <a class="welcome_view_projects_a" href="#projects">View Work</a>
-                </button>
-                <button class="welcome_button2">
-                    <a class="welcome_view_projects_a" href="#contact">Contact me</a>
-                </button>
+    </header>
+    <div class="content">
+        <div class="welcome" id="welcome">
+            <p class="welcomeMainText">Hi, my name is</p>
+            <h2 class="name">Fady Tamer</h2>
+            <p class="title">Frontend Developer</p>
+            <div class="btn">
+                <a class="welcomeBtn" href="data/Fady_Tamer_Resume.docx" download>Download CV</a>
+                <a class="welcomeBtn" href="#projects">View My Work</a>
             </div>
-            <div class="content_img">
-                <img class="mypic" src="img/mypic.jpg" alt="mypic">
+        </div>
+        <div class="about" id="about">
+            <div class="aboutHeader">
+                <h2 class="aboutTitle"><span>01. </span>About Me</h2>
+                <hr>
             </div>
-        </section>
-
-        <hr class="line" id="about_line">
-
-        <section class="about_me" id="about">
-            <h1 class="about_me_h1">About Me</h1>
-            <p class="about_me_p">I'm a motivated Computer Science student at the Faculty of Computers and Artificial
-                Intelligence, with hands-on experience in Java, SQL, and database-driven application development.
-                <br><br>
-                I’ve built real-world projects like an E-Book Store using Java (NetBeans) and Microsoft SQL Server,
-                applying concepts like ER/UML diagrams, OOP, and GUI design with Swing.
+            <p class="aboutText">
+                Dedicated and detail-oriented Computer Science student with strong <span>problem-solving</span> skills
+                and hands-on
+                experience in <span>web development</span>, <span>database design</span>. <br><br>
+                <span>Education :</span> Bachelor's degree in Computer Science from <span>Modern Academy, Cairo,
+                    Egypt</span> <br><br>
+                <span>certifications :</span> <br>
+            <pre class="aboutText">      <span>-</span> The Web Front End Learning Guide</pre>
             </p>
-
-            <div class="about_me_lists">
-                <p>🚀 What I’m good at:</p>
-                <ul>
-                    <li>Java, C++, HTML, CSS</li>
-                    <li>Microsoft SQL Server</li>
-                    <li>Database Design (ERD, UML, Normalization)</li>
-                    <li>GUI Applications</li>
-                </ul>
-
-                <p>💻 Projects I’ve worked on:</p>
-                <ul>
-                    <li>E-Book Store App – Search/browse books, manage inventory, export reports</li>
-                </ul>
+        </div>
+        <div class="projects" id="projects">
+            <div class="projectsHeader">
+                <h2 class="projectsTitle"><span>02. </span>Projects</h2>
+                <hr>
             </div>
-
-            <button class="about_me_download_cv">
-                <a class="about_me_download_cv_a" href="data/Fady_Tamer_Resume.docx" download>Download CV</a>
-            </button>
-        </section>
-
-        <section class="skills" id="skills">
-            <h1 class="skills_h1">My Tech Stack</h1>
-            <div class="skills_container">
-
-                <div class="skill_category">
-                    <h3>Languages</h3>
-                    <div class="skills_list">
-                        <div class="skill_item">
-                            <i class="devicon-cplusplus-plain"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="devicon-java-plain-wordmark"></i>
+            <div class="cards">
+                <div class="card">
+                    <img src="img/images.png" alt="Project 1" class="cardImage">
+                    <div class="cardLink">
+                        <a href="https://github.com/Fady-tamer/E-Book-project">
+                            <img src="svgs/brands/github.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="cardContent">
+                        <h2 class="cardTitle">E-Book Store</h2>
+                        <p class="cardDescription">
+                            This project is a Java-based desktop application designed to manage an E-Book Store. It
+                            provides a graphical user interface (GUI) for managing books, publishers, and authors in a
+                            database.
+                        </p>
+                        <div class="usedSkill">
                             <span>Java</span>
+                            <span>Microsoft SQL Server</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="skill_category">
-                    <h3>Frontend</h3>
-                    <div class="skills_list">
-                        <div class="skill_item">
-                            <i class="devicon-html5-plain"></i>
+                <div class="card">
+                    <img src="img/rentels.png" alt="Project 2" class="cardImage">
+                    <div class="cardLink">
+                        <a href="https://github.com/Fady-tamer/Rentels">
+                            <img src="svgs/brands/github.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="cardContent">
+                        <h2 class="cardTitle">Rentels</h2>
+                        <p class="cardDescription">
+                            This project about Rentals/Real Estate Marketplace provided fantastic experience in database
+                            design, backend logic, and frontend performance optimization.
+                        </p>
+                        <div class="usedSkill">
                             <span>HTML</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="devicon-css3-plain"></i>
                             <span>CSS</span>
-                        </div>
-                        <div class="skill_item">
-                            <i class="devicon-javascript-plain"></i>
                             <span>JavaScript</span>
+                            <span>PHP</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="skill_category">
-                    <h3>Databases</h3>
-                    <div class="skills_list">
-                        <div class="skill_item">
-                            <i class="devicon-microsoftsqlserver-plain"></i>
-                            <span>SQL Server</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <hr class="line" id="projects_line">
-
-        <section class="projects" id="projects">
-            <h1 class="projects_h1">Projects</h1>
-            <div class="project_cards">
-                <div class="project_card">
-                    <div class="project_head">
-                        <h2 class="project_card_h2">E-Book Store</h2>
-                        <p class="project_p">Apr 2025</p>
-                    </div>
-                    <p class="project_card_p">A Java-based application for managing an e-book store, featuring book
-                        browsing, inventory management, and report generation.</p>
-                    <div class="project_skill">
-                        <div class="skill">
-                            <div class="skill-name">Java</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 75%"></div>
-                            </div>
-                            <div class="skill-percent-number">75%</div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">SQL Server</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 25%"></div>
-                            </div>
-                            <div class="skill-percent-number">25%</div>
-                        </div>
-                    </div>
-                    <a class="project_card_a" href="https://github.com/Fady-tamer/E-Book-JAVA" target="_blank">
-                        <i class="devicon-github-plain"></i>
-                        <span>View Project</span>
-                    </a>
-                </div>
-                <div class="project_card">
-                    <div class="project_head">
-                        <h2 class="project_card_h2">Portfolio Website</h2>
-                        <p class="project_p">Oct 2025</p>
-                    </div>
-                    <p class="project_card_p">A personal portfolio website built with HTML and CSS to
-                        showcase my projects and skills.</p>
-                    <div class="project_skill">
-                        <div class="skill">
-                            <div class="skill-name">CSS</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 46%"></div>
-                            </div>
-                            <div class="skill-percent-number">46%</div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">HTML</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 40%"></div>
-                            </div>
-                            <div class="skill-percent-number">40%</div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">JavaScript</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 14%"></div>
-                            </div>
-                            <div class="skill-percent-number">14%</div>
-                        </div>
-                    </div>
-                    <a class="project_card_a" href="https://github.com/Fady-tamer/My-Portfolio" target="_blank">
-                        <i class="devicon-github-plain"></i>
-                        <span>View Project</span>
-                    </a>
-                </div>
-                <div class="project_card">
-                    <div class="project_head">
-                        <h2 class="project_card_h2">Social Links Hub</h2>
-                        <p class="project_p">Sep 2025</p>
-                    </div>
-                    <p class="project_card_p">A clean and simple landing page that consolidates all social media and
-                        contact links in one convenient place.</p>
-                    <div class="project_skill">
-                        <div class="skill">
-                            <div class="skill-name">CSS</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 50%"></div>
-                            </div>
-                            <div class="skill-percent-number">50%</div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">HTML</div>
-                            <div class="skill-level">
-                                <div class="skill-percent" style="width: 50%"></div>
-                            </div>
-                            <div class="skill-percent-number">50%</div>
-                        </div>
-                    </div>
-                    <a class="project_card_a" href="https://github.com/Fady-tamer/Tamer-site" target="_blank">
-                        <i class="devicon-github-plain"></i>
-                        <span>View Project</span>
-                    </a>
                 </div>
             </div>
-        </section>
-
-        <hr class="line">
-
-        <section class="contact" id="contact">
-            <h1 class="contact_h1">Get In Touch</h1>
-            <p class="contact_p">Feel free to reach out for collaborations or just a friendly hello!</p>
-            <div class="contact_links_container">
-                <div class="contact_links">
-                    <a class="link" href="https://www.linkedin.com/in/fady-tamer/" target="_blank"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a class="link" href="https://www.facebook.com/fadytamer444/" target="_blank"
-                        aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a class="link" href="https://www.instagram.com/_fady_tamer_/" target="_blank"
-                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a class="link" href="https://github.com/Fady-tamer" target="_blank" aria-label="GitHub"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a class="link" href="mailto:fadytamer2018@gmail.com" target="_blank" aria-label="Email"><i
-                            class="fa-solid fa-inbox"></i></a>
+        </div>
+        <div class="skills" id="skills">
+            <div class="skillsHeader">
+                <h2 class="skillsTitle"><span>03. </span>Skills & Technologies</h2>
+                <hr>
+            </div>
+            <div class="skillsContainer">
+                <div class="skill">
+                    <img src="img/c-.png" alt="">
+                    <p>C++</p>
+                </div>
+                <div class="skill">
+                    <img src="img/html-5.png" alt="">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="img/css-3.png" alt="">
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="img/js.png" alt="">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="img/php.png" alt="">
+                    <p>PHP</p>
+                </div>
+                <div class="skill">
+                    <img src="img/mysql.png" alt="">
+                    <p>MySQL</p>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p class="footer_p">© 2025 Fady Tamer. All rights reserved.</p>
-    </footer>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="link">
+            <a href="https://www.linkedin.com/in/fady-tamer/">
+                <img src="svgs/brands/linkedin.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/fadytamer444/">
+                <img src="svgs/brands/facebook.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/_fady_tamer_/">
+                <img src="svgs/brands/instagram.svg" alt="">
+            </a>
+            <a href="https://github.com/Fady-tamer">
+                <img src="svgs/brands/github.svg" alt="">
+            </a>
+            <a href="mailto:fadytamer2018@gmail.com">
+                <img src="svgs/solid/message.svg" alt="">
+            </a>
+        </div>
+        <p>&copy;2025 Fady Tamer. All rights reserved.</p>
+    </div>
+    <script src="index.js"></script>
 </body>
-
-<script src="index.js"></script>
 
 </html>
