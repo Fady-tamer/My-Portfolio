@@ -30,42 +30,55 @@ skill.forEach((skill, index) => {
 });
 
 const header = document.querySelector('header');
+const headerName = document.querySelector('.header_name');
 const about = document.querySelector('#aboutLink');
 const projects = document.querySelector('#projectsLink');
 const skills = document.querySelector('#skillsLink');
 const contact = document.querySelector('#contactLink');
 
-about.addEventListener('click', () => {
-    window.scrollTo({
-        top: 950,
-        behavior: 'smooth'
-    });
+const navLinks = [about, projects, skills, contact];
+
+const getScrollPositions = () => {
+    const isMobile = window.innerWidth < 768;
+    return {
+        about: isMobile ? 1250 : 950,
+        projects: isMobile ? 1750 : 1350,
+        skills: isMobile ? 3000 : 2050
+    };
+};
+
+headerName.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+about.addEventListener('click', () => {
+    window.scrollTo({ top: getScrollPositions().about, behavior: 'smooth' });
+});
+
 projects.addEventListener('click', () => {
-    window.scrollTo({
-        top: 1350,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: getScrollPositions().projects, behavior: 'smooth' });
+});
+
+skills.addEventListener('click', () => {
+    window.scrollTo({ top: getScrollPositions().skills, behavior: 'smooth' });
 });
 
 window.addEventListener('scroll', () => {
-    about.style.color = '';
-    projects.style.color = '';
-    skills.style.color = '';
-    contact.style.color = '';
+    const scrollY = window.scrollY;
+    const pos = getScrollPositions();
 
-    if (window.scrollY <= 50) {
+    if (scrollY > 50) {
+        header.style.borderBottom = '0.5px solid #7b8c9d36';
+    } else {
         header.style.borderBottom = 'none';
-    } else if (window.scrollY >= 950 && window.scrollY <= 1349 && window.innerWidth > 768) {
-        header.style.borderBottom = '0.5px solid #7b8c9d36';
+    }
+    navLinks.forEach(link => link.style.color = '');
+
+    if (scrollY >= pos.about && scrollY < pos.projects) {
         about.style.color = 'var(--TC)';
-    } else if (window.scrollY >= 1350 && window.scrollY <= 1999 && window.innerWidth > 768) {
-        header.style.borderBottom = '0.5px solid #7b8c9d36';
+    } else if (scrollY >= pos.projects && scrollY < pos.skills) {
         projects.style.color = 'var(--TC)';
-    } else if (window.scrollY >= 2000 && window.scrollY <= 2500 && window.innerWidth > 768) {
-        header.style.borderBottom = '0.5px solid #7b8c9d36';
+    } else if (scrollY >= pos.skills && scrollY <= 2500) {
         skills.style.color = 'var(--TC)';
-    } else if (window.scrollY > 50 && window.innerWidth > 768) {
-        header.style.borderBottom = '0.5px solid #7b8c9d36';
     }
 });
