@@ -1,84 +1,148 @@
-card = document.querySelectorAll('.card');
-cardLink = document.querySelectorAll('.cardLink');
+const setupHoverEffect = (selector, childSelector, activeStyles, inactiveStyles) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el) => {
+        const target = el.querySelector(childSelector);
+        
+        el.addEventListener('mouseenter', () => {
+            Object.assign(target.style, activeStyles);
+            if(el.classList.contains('skill')) el.querySelector('p').style.color = '#fff';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            Object.assign(target.style, inactiveStyles);
+            if(el.classList.contains('skill')) el.querySelector('p').style.color = '#7b8c9d';
+        });
+    });
+};
 
-card.forEach((card, index) => {
-    card.addEventListener('mouseover', () => {
-        cardLink[index].style.display = 'flex';
-    });
-    setTimeout(() => {
-        card.addEventListener('mouseout', () => {
-        cardLink[index].style.display = 'none';
-    });
-    }, 3000);
-});
-
-skill = document.querySelectorAll('.skill');
-skillP = document.querySelectorAll('.skill p');
-skillIMG = document.querySelectorAll('.skill img');
-
-skill.forEach((skill, index) => {
-    skill.addEventListener('mouseover', () => {
-        skillIMG[index].style.transform = 'scale(1.2)';
-        skillP[index].style.color = '#fff';
-    });
-    setTimeout(() => {
-        skill.addEventListener('mouseout', () => {
-        skillIMG[index].style.transform = 'scale(1)';
-        skillP[index].style.color = '#7b8c9d';
-    });
-    }, 3000);
-});
+// Initialize hover effects without the buggy setTimeouts
+setupHoverEffect('.card', '.cardLink', { display: 'flex' }, { display: 'none' });
+setupHoverEffect('.skill', 'img', { transform: 'scale(1.2)' }, { transform: 'scale(1)' });
 
 const header = document.querySelector('header');
 const headerName = document.querySelector('.header_name');
-const about = document.querySelector('#aboutLink');
-const projects = document.querySelector('#projectsLink');
-const skills = document.querySelector('#skillsLink');
-const contact = document.querySelector('#contactLink');
 
-const navLinks = [about, projects, skills, contact];
+const navMap = [
+    { link: document.querySelector('#aboutLink'), section: document.querySelector('#about') },
+    { link: document.querySelector('#projectsLink'), section: document.querySelector('#projects') },
+    { link: document.querySelector('#skillsLink'), section: document.querySelector('#skills') },
+    { link: document.querySelector('#contactLink'), section: document.querySelector('#contact') }
+];
 
-const getScrollPositions = () => {
-    const isMobile = window.innerWidth < 768;
-    return {
-        about: isMobile ? 1250 : 950,
-        projects: isMobile ? 1750 : 1350,
-        skills: isMobile ? 3000 : 2050
-    };
-};
-
+// Smooth scroll to top
 headerName.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-about.addEventListener('click', () => {
-    window.scrollTo({ top: getScrollPositions().about, behavior: 'smooth' });
+// Dynamic Click Handling
+navMap.forEach(({ link, section }) => {
+    if (!link || !section) return;
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const offset = window.innerWidth <= 768 ? 120 : 20;
+        const top = section.offsetTop - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+    });
 });
 
-projects.addEventListener('click', () => {
-    window.scrollTo({ top: getScrollPositions().projects, behavior: 'smooth' });
-});
-
-skills.addEventListener('click', () => {
-    window.scrollTo({ top: getScrollPositions().skills, behavior: 'smooth' });
-});
-
+// 3. Scroll & Active State Logic
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const pos = getScrollPositions();
+    
+    header.style.borderBottom = scrollY > 50 ? '0.5px solid #7b8c9d36' : 'none';
 
-    if (scrollY > 50) {
-        header.style.borderBottom = '0.5px solid #7b8c9d36';
-    } else {
-        header.style.borderBottom = 'none';
-    }
-    navLinks.forEach(link => link.style.color = '');
+    const offset = window.innerWidth <= 768 ? 130 : 30;
 
-    if (scrollY >= pos.about && scrollY < pos.projects) {
-        about.style.color = 'var(--TC)';
-    } else if (scrollY >= pos.projects && scrollY < pos.skills) {
-        projects.style.color = 'var(--TC)';
-    } else if (scrollY >= pos.skills && scrollY <= 2500) {
-        skills.style.color = 'var(--TC)';
-    }
+    navMap.forEach(({ link, section }) => {
+        if (!link || !section) return;
+        
+        const sectionTop = section.offsetTop - offset;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionBottom) {
+            link.style.color = 'var(--TC)';
+            link.style.textShadow = '0px 0px 30px var(--TC)';
+        } else {
+            link.style.color = '';
+            link.style.textShadow = '';
+        }
+    });
 });
+
+const contactForm = document.querySelector('.contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const button = contactForm.querySelector('button');
+        const data = new FormData(contactForm);
+        
+        button.innerText = 'Sending...';
+        button.disabled = true;
+
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            button.innerText = 'Message Sent!';
+            button.style.backgroundColor = '#28a745';
+            contactForm.reset();
+            setTimeout(() => {
+                button.innerText = 'Send Message';
+                button.style.backgroundColor = '';
+                button.disabled = false;
+            }, 3000);
+        } else {
+            button.innerText = 'Error! Try again.';
+            button.style.backgroundColor = '#dc3545';
+            button.disabled = false;
+        }
+    });
+}
+
+const toast = document.getElementById('toast-notification');
+const toastMsg = document.getElementById('toast-message');
+
+function showToast(message, isError = false) {
+    toastMsg.innerText = message;
+    toast.style.borderColor = isError ? '#dc3545' : 'var(--TC)';
+    toast.style.color = isError ? '#dc3545' : 'var(--TC)';
+    toast.className = "toast show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const button = contactForm.querySelector('button');
+        const data = new FormData(contactForm);
+        
+        button.innerText = 'Sending...';
+        button.disabled = true;
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                showToast("Success! I'll get back to you soon.");
+                contactForm.reset();
+            } else {
+                showToast("Something went wrong. Please try again.", true);
+            }
+        } catch (error) {
+            showToast("Network error. Check your connection.", true);
+        } finally {
+            button.innerText = 'Send Message';
+            button.disabled = false;
+        }
+    });
+}
