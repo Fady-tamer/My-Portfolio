@@ -1,3 +1,18 @@
+const textElement = document.getElementById('typewriter');
+const phrases = ['Frontend Developer'];
+let phraseIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < phrases[phraseIndex].length) {
+        textElement.textContent += phrases[phraseIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 300);
+    }
+}
+
+type();
+
 const setupHoverEffect = (selector, childSelector, activeStyles, inactiveStyles) => {
     const elements = document.querySelectorAll(selector);
     elements.forEach((el) => {
@@ -15,7 +30,6 @@ const setupHoverEffect = (selector, childSelector, activeStyles, inactiveStyles)
     });
 };
 
-// Initialize hover effects without the buggy setTimeouts
 setupHoverEffect('.card', '.cardLink', { display: 'flex' }, { display: 'none' });
 setupHoverEffect('.skill', 'img', { transform: 'scale(1.2)' }, { transform: 'scale(1)' });
 
@@ -29,12 +43,10 @@ const navMap = [
     { link: document.querySelector('#contactLink'), section: document.querySelector('#contact') }
 ];
 
-// Smooth scroll to top
 headerName.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Dynamic Click Handling
 navMap.forEach(({ link, section }) => {
     if (!link || !section) return;
     link.addEventListener('click', (e) => {
@@ -45,7 +57,6 @@ navMap.forEach(({ link, section }) => {
     });
 });
 
-// 3. Scroll & Active State Logic
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     

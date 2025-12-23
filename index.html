@@ -27,11 +27,17 @@
             <a class="header_links_a" id="contactLink">Contact</a>
         </nav>
     </header>
+    <div class="spheres">
+        <div class="sphere1"></div>
+        <div class="sphere2"></div>
+        <div class="sphere3"></div>
+        <div class="sphere4"></div>
+    </div>
     <div class="content">
         <div class="welcome" id="welcome">
             <p class="welcomeMainText">Hi, my name is</p>
             <h2 class="name">Fady Tamer</h2>
-            <p class="title">Frontend Developer</p>
+            <p class="title" id="typewriter"></p>
             <div class="btn">
                 <a class="welcomeBtn" href="data/Fady_Tamer_Resume.docx" download>Download CV</a>
                 <a class="welcomeBtn" href="#projects">View My Work</a>
@@ -140,7 +146,8 @@
             <hr>
         </div>
         <div class="contactContent">
-            <p class="contactText">I'm currently looking for new opportunities. Whether you have a question or just want
+            <p class="contactText">I'm currently looking for new opportunities. <br>
+                Whether you have a question or just want
                 to say hi, I'll try my best to get back to you!</p>
             <form class="contactForm" action="https://formspree.io/f/mvzpwjkw" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
