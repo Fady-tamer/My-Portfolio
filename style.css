@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     background-color: var(--BGC);
 }
 
@@ -243,19 +243,21 @@ body {
     padding: 20px;
     position: relative;
     display: flex;
+    text-decoration: none;
     align-items: center;
     flex-direction: row;
     transition: all 0.5s;
 }
 
-.cardLink img {
-    width: 30px;
+.cardLink i {
+    font-size: 30px;
     padding: 10px;
     border-radius: 50%;
+    color: #000;
     transition: all 0.5s;
 }
 
-.cardLink img:hover {
+.cardLink i:hover {
     transform: scale(1.2);
     background-color: var(--TC);
     transition: all 0.5s;
@@ -455,9 +457,9 @@ body {
     text-decoration: none;
 }
 
-.link img {
-    filter: invert();
-    width: 30px;
+.link i {
+    font-size: 25px;
+    color: var(--TC);
 }
 
 @media (max-width: 768px) {
